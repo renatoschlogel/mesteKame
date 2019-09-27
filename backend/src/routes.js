@@ -2,7 +2,7 @@ const express = require("express");
 
 const routes = express.Router();
 
-const main = require("./controllers/MainController");
+const DadosController = require("./controllers/DadosController");
 
 // const controller = require('./controllers/ProductController');
 
@@ -13,6 +13,6 @@ const main = require("./controllers/MainController");
 // routes.put("/products/:id", productController.update);
 // routes.delete("/products/:id", productController.destroy);
 
-routes.get("/", main.main);
+routes.get("/dados", DadosController.index);
 
 module.exports = routes;

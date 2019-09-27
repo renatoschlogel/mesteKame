@@ -8,9 +8,10 @@ const app = express();
 app.use(express.json()); // permite o envio de Json a API 
 app.use(cors()); // acesso publico a API
 
+requireDir('./models');
+
 mongoose.connect('mongodb://localhost:27017/mestrekame', {useNewUrlParser: true, useUnifiedTopology: true});
 
-requireDir('./models');
 
 app.use('/mestrekame', require('./routes'));
 

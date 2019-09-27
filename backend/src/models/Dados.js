@@ -1,12 +1,13 @@
-const { Schema, model } = require('mongoose'); 
+const { Schema, model } = require('mongoose');
+const mongoosePaginate = require('mongoose-paginate');
 
 const DadosSchema = new Schema({
-     descricao: {
+     dado: {
         type: String,
         required:true
     }
-}, {
-    timestamps: true
 });
+
+DadosSchema.plugin(mongoosePaginate);
 
 module.exports = model('Dados', DadosSchema);
